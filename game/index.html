@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOTHLIGHT — a lamplight stealth</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0a0e16; }
+  /* The 1280x800 field keeps its aspect and stays fully visible at any window size. */
+  #game { position: fixed; inset: 0; margin: auto; width: min(100vw, 160vh); height: min(100vh, 62.5vw); display: block; touch-action: none; }
+  /* Read aloud, never shown: the status line screen readers announce. */
+  #status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+</style>
+</head>
+<body>
+<canvas id="game" width="1280" height="800" aria-label="MOTHLIGHT: a top-down stealth game. Move with WASD or arrows, sneak with Shift, slip past the guards' yellow vision cones and reach the green exit unseen."></canvas>
+<p id="status" role="status" aria-live="polite"></p>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
